@@ -1,15 +1,15 @@
 const Sequelize = require("sequelize");
 
-const sequelize = require("../util/database");
+const { sequelize } = require("../util/database");
 
 const Contact = sequelize.define(
   "contact",
   {
     id: {
       type: Sequelize.INTEGER,
-      autoIncreement: true,
-      allowNull: false,
+      autoIncrement: true,
       primaryKey: true,
+      allowNull: false,
     },
     email: {
       type: Sequelize.STRING,
