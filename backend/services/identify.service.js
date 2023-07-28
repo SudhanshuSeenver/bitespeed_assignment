@@ -142,7 +142,7 @@ async function identify(body) {
     const contactsAll = await Contact.findAll();
 
     if (!pId) {
-      pId = contactDataValues[0].linkedId;
+      pId = contactDataValues[0].linkedId || primaryCts[0].id;
     }
 
     contactsAll.forEach((cts) => {
