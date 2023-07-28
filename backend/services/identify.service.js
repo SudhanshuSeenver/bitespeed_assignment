@@ -136,6 +136,14 @@ async function identify(body) {
             },
           }
         );
+        await Contact.update(
+          { linkedId: primaryCts[0].id },
+          {
+            where: {
+              linkedId: primaryCts[i].id,
+            },
+          }
+        );
       }
     }
 
