@@ -10,9 +10,7 @@ const PGURI = process.env.PGURI;
 
 // const URI = `postgres://${PGUSERNAME}:${PGPASSWORD}@example.com:${PGPORT}/${PGDB}`;
 
-const URI = PGURI;
-
-const sequelize = new Sequelize(URI);
+const sequelize = new Sequelize(PGURI);
 
 // const sequelize = new Sequelize(PGDB, PGUSERNAME, PGPASSWORD, {
 //   host: PGHOST,
