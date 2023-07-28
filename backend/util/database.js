@@ -6,16 +6,19 @@ const PGHOST = process.env.PGHOST;
 const PGDB = process.env.PGDB;
 const PGPASSWORD = process.env.PGPASSWORD;
 const PGPORT = process.env.PGPORT;
+const PGURI = process.env.PGURI;
 
 // const URI = `postgres://${PGUSERNAME}:${PGPASSWORD}@example.com:${PGPORT}/${PGDB}`;
 
-// const sequelize = new Sequelize(URI);
+const URI = PGURI;
 
-const sequelize = new Sequelize(PGDB, PGUSERNAME, PGPASSWORD, {
-  host: PGHOST,
-  port: PGPORT,
-  dialect: "postgres",
-});
+const sequelize = new Sequelize(URI);
+
+// const sequelize = new Sequelize(PGDB, PGUSERNAME, PGPASSWORD, {
+//   host: PGHOST,
+//   port: PGPORT,
+//   dialect: "postgres",
+// });
 
 async function isConnetionEstablishedAndSynced() {
   try {
